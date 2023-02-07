@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".intro">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -72,6 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/startBtn"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/white_button"
@@ -86,9 +87,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GET STARED"
+            android:textColor="#ff5e00"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="#ff5e00"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
