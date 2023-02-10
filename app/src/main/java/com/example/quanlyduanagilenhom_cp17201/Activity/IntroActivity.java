@@ -1,4 +1,4 @@
-package com.example.quanlyduanagilenhom_cp17201;
+package com.example.quanlyduanagilenhom_cp17201.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class intro extends AppCompatActivity {
+import com.example.quanlyduanagilenhom_cp17201.R;
+
+public class IntroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +19,7 @@ public class intro extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(intro.this,MainActivity.class));
+                startActivity(new Intent(IntroActivity.this, MainActivity.class));
             }
         });
     }

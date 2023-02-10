@@ -1,8 +1,10 @@
-package com.example.quanlyduanagilenhom_cp17201;
+package com.example.quanlyduanagilenhom_cp17201.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.quanlyduanagilenhom_cp17201.R;
 
 public class MainActivity extends AppCompatActivity {
 
