@@ -1,5 +1,6 @@
 package com.example.quanlyduanagilenhom_cp17201.Activity.Adapter;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -28,14 +29,31 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_cart,parent,false));
+        return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
+    holder.title.setText(foodDomains.get(position).getTitle());
+    holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getFee()));
+    holder.totalEachItem.setText(String.valueOf(Math.round((foodDomains.get(position).getNumberInCart() * foodDomains.get(position).getFee()) * 100) / 100));
+    holder.num.setText(String.valueOf(foodDomains.get(position).getNumberInCart()));
 
+    int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic()
+            ,"drawable", holder.itemView.getContext().getPackageName());
+
+
+    Glide.with(holder.itemView.getContext())
+            .load(drawableResourceId)
+            .intro(holder.pic);
+    holder.plusItem.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+        }
+    });
     }
-
     @Override
     public int getItemCount() {
         return foodDomains.size();
@@ -47,7 +65,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         TextView totalEachItem, num;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.)
+            title = itemView.findViewById(R.id.titleTxt);
+            feeEachItem = itemView.findViewById(R.id.feeEachItem);
+            pic = itemView.findViewById(R.id.picCart);
+            totalEachItem = itemView.findViewById(R.id.totalEachItem);
+            num = itemView.findViewById(R.id.numberItemTxt);
+            plusItem = itemView.findViewById(R.id.plusCartBtn);
+            minusItem = itemView.findViewById(R.id.minusCart);
         }
     }
 }
