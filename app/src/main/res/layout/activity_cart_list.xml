@@ -7,24 +7,29 @@
     tools:context="Activity.Activity.CartListActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="My Cart"
                 android:layout_marginTop="32dp"
-                android:textStyle="bold"
-                android:textSize="20sp"
+                android:text="My Cart"
+                android:textAlignment="center"
                 android:textColor="#ff3d00"
-                android:textAlignment="center"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -47,8 +52,7 @@
                     android:text="Items Total:"
                     android:textColor="#373b54"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/totalFeeTxt"
@@ -56,9 +60,9 @@
                     android:layout_height="wrap_content"
 
                     android:text="$0"
-                    android:textStyle="bold"
+                    android:textColor="#373b54"
                     android:textSize="18sp"
-                    android:textColor="#373b54"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -71,7 +75,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView8fg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,7 +85,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalTxt"
+                    android:id="@+id/deliveryTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -101,7 +105,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView8adfsadfg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -111,7 +115,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalFeeTxt"
+                    android:id="@+id/taxTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -131,7 +135,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView812"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -141,7 +145,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalFeeTxt"
+                    android:id="@+id/totalTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -155,15 +159,28 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="CheckOut"
-                android:background="@drawable/orange_button"
                 android:layout_margin="16dp"
+                android:background="@drawable/orange_button"
                 android:gravity="center"
+                android:text="CheckOut"
                 android:textColor="#ffffff"
                 android:textSize="25sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/emptyTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Cart Is Empty"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="@+id/scrollView2"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
